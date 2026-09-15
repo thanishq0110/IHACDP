@@ -1,20 +1,19 @@
-# Python
+# Everything the project produces is committed: the raw datasets in data/raw,
+# the trained models and SHAP background samples in artifacts/, and the built
+# report and deck in docs/. A fresh clone runs without fetching or training.
+#
+# Only machine-specific or regenerated files are excluded.
+
+# Virtual environment - 590 MB of compiled binaries built for this exact machine
+# and Python version. setup.sh recreates it; committing it would break the
+# install on any other Mac.
 .venv/
+
+# Python bytecode and test caches - regenerated on every run
 __pycache__/
 *.pyc
 .pytest_cache/
 
-# Downloaded datasets - fetched by scripts/fetch_data.py and fetch_symcat.py
-data/raw/*.csv
-
-# Trained models and derived artefacts - rebuilt by scripts/train*.py
-artifacts/*.joblib
-artifacts/*_background.csv
-
-# Local runtime state
-.model
-*.log
-
-# macOS
+# macOS Finder metadata
 .DS_Store
 **/.DS_Store

@@ -1,0 +1,191 @@
+condition,reason
+Abscess of nose,everyday
+Abscess of the lung,everyday
+Abscess of the pharynx,everyday
+Acne,everyday
+Acute bronchitis,everyday
+Acute glaucoma,cannot-miss
+Acute kidney injury,everyday
+Acute otitis media,everyday
+Acute pancreatitis,cannot-miss
+Acute sinusitis,everyday
+Allergy,everyday
+Allergy to animals,everyday
+Anemia,everyday
+Anemia due to chronic kidney disease,everyday
+Anemia due to malignancy,everyday
+Anemia of chronic disease,everyday
+Anxiety,everyday
+Aplastic anemia,everyday
+Appendicitis,cannot-miss
+Arthritis of the hip,everyday
+Asthma,everyday
+Atrophic vaginitis,everyday
+Broken tooth,everyday
+Burn,everyday
+Bursitis,everyday
+Cellulitis or abscess of mouth,everyday
+Chalazion,everyday
+Chickenpox,everyday
+Cholecystitis,everyday
+Chronic constipation,everyday
+Chronic glaucoma,cannot-miss
+Chronic otitis media,everyday
+Chronic pancreatitis,cannot-miss
+Chronic rheumatic fever,everyday
+Chronic sinusitis,everyday
+Concussion,everyday
+Conjunctivitis,everyday
+Conjunctivitis due to allergy,everyday
+Conjunctivitis due to bacteria,everyday
+Conjunctivitis due to virus,everyday
+Contact dermatitis,everyday
+Croup,everyday
+Crushing injury,everyday
+Cystitis,everyday
+Dengue fever,everyday
+Dental caries,everyday
+Depression,everyday
+Dermatitis due to sun exposure,everyday
+Diabetes,everyday
+Diabetes insipidus,everyday
+Diabetic ketoacidosis,everyday
+Diabetic kidney disease,everyday
+Diabetic peripheral neuropathy,everyday
+Diabetic retinopathy,everyday
+Dislocation of the ankle,everyday
+Dislocation of the elbow,everyday
+Dislocation of the finger,everyday
+Dislocation of the foot,everyday
+Dislocation of the hip,everyday
+Dislocation of the knee,everyday
+Dislocation of the patella,everyday
+Dislocation of the shoulder,everyday
+Dislocation of the vertebra,everyday
+Dislocation of the wrist,everyday
+Diverticulitis,cannot-miss
+Eczema,everyday
+Food allergy,everyday
+Fracture of the ankle,everyday
+Fracture of the arm,everyday
+Fracture of the facial bones,everyday
+Fracture of the finger,everyday
+Fracture of the foot,everyday
+Fracture of the hand,everyday
+Fracture of the jaw,everyday
+Fracture of the leg,everyday
+Fracture of the neck,everyday
+Fracture of the patella,everyday
+Fracture of the pelvis,everyday
+Fracture of the rib,everyday
+Fracture of the shoulder,everyday
+Fracture of the skull,everyday
+Fracture of the vertebra,everyday
+Fungal infection of the hair,everyday
+Fungal infection of the skin,everyday
+Gastritis,everyday
+Gastroesophageal reflux disease (GERD),everyday
+Genital herpes,everyday
+Gestational diabetes,everyday
+Glaucoma,cannot-miss
+Gout,everyday
+Hashimoto thyroiditis,everyday
+Head injury,everyday
+Headache after lumbar puncture,everyday
+Heart contusion,everyday
+Heat stroke,cannot-miss
+Hemolytic anemia,everyday
+Hemorrhagic fever,everyday
+Hemorrhoids,everyday
+Hypertension of pregnancy,everyday
+Hypertensive heart disease,everyday
+Hypothyroidism,everyday
+Idiopathic absence of menstruation,everyday
+Idiopathic excessive menstruation,everyday
+Idiopathic infrequent menstruation,everyday
+Idiopathic irregular menstrual cycle,everyday
+Idiopathic nonmenstrual bleeding,everyday
+Idiopathic painful menstruation,everyday
+Indigestion,everyday
+Infectious gastroenteritis,everyday
+Injury of the ankle,everyday
+Injury to internal organ,everyday
+Injury to the abdomen,everyday
+Injury to the arm,everyday
+Injury to the face,everyday
+Injury to the finger,everyday
+Injury to the hand,everyday
+Injury to the hip,everyday
+Injury to the knee,everyday
+Injury to the leg,everyday
+Injury to the shoulder,everyday
+Injury to the spinal cord,everyday
+Injury to the trunk,everyday
+Intracranial abscess,everyday
+Iron deficiency anemia,everyday
+Juvenile rheumatoid arthritis,everyday
+Kidney disease due to longstanding hypertension,everyday
+Laryngitis,everyday
+Lice,everyday
+Lumbago,everyday
+Lung contusion,everyday
+Malignant hypertension,everyday
+Meningitis,cannot-miss
+Migraine,everyday
+Mumps,everyday
+Noninfectious gastroenteritis,everyday
+Obesity,everyday
+Orbital cellulitis,everyday
+Osteoarthritis,everyday
+Otitis externa (swimmer's ear),everyday
+Otitis media,everyday
+Panic attack,everyday
+Panic disorder,everyday
+Parathyroid adenoma,everyday
+Peritonsillar abscess,everyday
+Pharyngitis,everyday
+Pneumonia,everyday
+Poisoning due to antidepressants,everyday
+Poisoning due to antihypertensives,everyday
+Postpartum depression,everyday
+Premenstrual tension syndrome,everyday
+Primary insomnia,everyday
+Pseudohypoparathyroidism,everyday
+Psoriasis,everyday
+Pulmonary hypertension,everyday
+Pyelonephritis,cannot-miss
+Reactive arthritis,everyday
+Rheumatic fever,everyday
+Rheumatoid arthritis,everyday
+Rocky Mountain spotted fever,everyday
+Rotator cuff injury,everyday
+Scabies,everyday
+Scarlet fever,everyday
+Sciatica,everyday
+Seasonal allergies (hay fever),everyday
+Seborrheic dermatitis,everyday
+Sepsis,cannot-miss
+Septic arthritis,everyday
+Shingles (herpes zoster),everyday
+Sickle cell anemia,everyday
+Sprain or strain,everyday
+Stroke,cannot-miss
+Stye,everyday
+Subacute thyroiditis,everyday
+Subarachnoid hemorrhage,cannot-miss
+Tendinitis,everyday
+Tension headache,everyday
+Thyroid cancer,everyday
+Thyroid disease,everyday
+Thyroid nodule,everyday
+Tinnitus of unknown cause,everyday
+Tonsillar hypertrophy,everyday
+Tonsillitis,everyday
+Tooth abscess,everyday
+Tooth disorder,everyday
+Typhoid fever,everyday
+Vaginitis,everyday
+Valley fever,everyday
+Vesicoureteral reflux,everyday
+Viral warts,everyday
+Whooping cough,everyday
