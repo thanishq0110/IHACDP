@@ -1,9 +1,14 @@
-# Inputs are committed, build output is not.
+# Inputs are committed; anything a script builds or downloads is not.
 #
 # Kept: the raw datasets in data/raw, the trained models and SHAP background
-# samples in artifacts/, the chapter sources in docs/chapters, the captured UI
-# screenshots in docs/figures/ui_*.png, and the reference papers in papers/.
-# A fresh clone still runs without fetching or training.
+# samples in artifacts/, the chapter sources in docs/chapters, and the captured
+# UI screenshots in docs/figures/ui_*.png. A fresh clone still runs without
+# fetching or training.
+
+# Downloaded papers - 36 MB of PDFs fetched by scripts/fetch_papers.py.
+# papers/README.md stays tracked: it is the manifest saying where every cited
+# work came from, including the eleven that cannot be redistributed at all.
+papers/*.pdf
 
 # Built documents - scripts/build_report.py and scripts/build_deck.py
 docs/IHACDP_Report.pdf
