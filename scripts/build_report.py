@@ -94,7 +94,7 @@ pre { border: 1px solid #999; padding: 8pt; background: #f7f7f7; white-space: pr
 .toc-line.lvl0 { font-weight: bold; margin-top: 12pt; text-transform: uppercase; }
 .toc-line.lvl1 { padding-left: 16pt; }
 figure { margin: 14pt 0; text-align: center; page-break-inside: avoid; }
-figure img { max-width: 100%; max-height: 165mm; border: 1px solid #bbb; }
+figure img { max-width: 100%; max-height: 108mm; border: 1px solid #bbb; }
 figcaption { font-size: 10.5pt; margin-top: 6pt; font-style: italic; }
 .abstract p:first-of-type { margin-top: 0; }
 """
