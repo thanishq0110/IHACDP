@@ -1,0 +1,247 @@
+{
+  "key": "liver",
+  "label": "Chronic Liver Disease",
+  "desc": "Hepatic injury from liver function tests",
+  "source": "UCI #225 - Indian Liver Patient Dataset",
+  "rows": 583,
+  "n_features": 10,
+  "prevalence": 0.7136,
+  "chosen_algorithm": "RandomForest",
+  "metrics": {
+    "algorithm": "RandomForest",
+    "cv_auc_mean": 0.7369,
+    "cv_auc_std": 0.0237,
+    "test_auc": 0.7821,
+    "accuracy": 0.7009,
+    "precision": 0.7857,
+    "recall": 0.7952,
+    "f1": 0.7904,
+    "brier": 0.1704,
+    "fit_seconds": 0.59
+  },
+  "leaderboard": [
+    {
+      "algorithm": "RandomForest",
+      "cv_auc_mean": 0.7369,
+      "cv_auc_std": 0.0237,
+      "test_auc": 0.7821,
+      "accuracy": 0.7009,
+      "precision": 0.7857,
+      "recall": 0.7952,
+      "f1": 0.7904,
+      "brier": 0.1704,
+      "fit_seconds": 0.59
+    },
+    {
+      "algorithm": "XGBoost",
+      "cv_auc_mean": 0.7257,
+      "cv_auc_std": 0.0265,
+      "test_auc": 0.741,
+      "accuracy": 0.7009,
+      "precision": 0.74,
+      "recall": 0.8916,
+      "f1": 0.8087,
+      "brier": 0.2208,
+      "fit_seconds": 0.22
+    },
+    {
+      "algorithm": "LogisticRegression",
+      "cv_auc_mean": 0.7132,
+      "cv_auc_std": 0.0222,
+      "test_auc": 0.8313,
+      "accuracy": 0.735,
+      "precision": 0.9194,
+      "recall": 0.6867,
+      "f1": 0.7862,
+      "brier": 0.1702,
+      "fit_seconds": 0.05
+    }
+  ],
+  "roc": {
+    "fpr": [
+      0.0,
+      0.0,
+      0.0,
+      0.0294,
+      0.0294,
+      0.0588,
+      0.0588,
+      0.0882,
+      0.0882,
+      0.1176,
+      0.1176,
+      0.1765,
+      0.1765,
+      0.2353,
+      0.2353,
+      0.3529,
+      0.3529,
+      0.3824,
+      0.3824,
+      0.4118,
+      0.4118,
+      0.4706,
+      0.4706,
+      0.5294,
+      0.5294,
+      0.6176,
+      0.6176,
+      0.6765,
+      0.6765,
+      0.7353,
+      0.7353,
+      0.7941,
+      0.7941,
+      0.9118,
+      0.9118,
+      0.9706,
+      0.9706,
+      1.0,
+      1.0
+    ],
+    "tpr": [
+      0.0,
+      0.012,
+      0.4096,
+      0.4096,
+      0.4458,
+      0.4458,
+      0.506,
+      0.506,
+      0.6024,
+      0.6024,
+      0.6145,
+      0.6145,
+      0.6265,
+      0.6265,
+      0.6867,
+      0.6867,
+      0.7108,
+      0.7108,
+      0.747,
+      0.747,
+      0.7711,
+      0.7711,
+      0.7831,
+      0.7831,
+      0.8675,
+      0.8675,
+      0.8916,
+      0.8916,
+      0.9277,
+      0.9277,
+      0.9398,
+      0.9398,
+      0.9518,
+      0.9518,
+      0.9639,
+      0.9639,
+      0.9759,
+      0.9759,
+      1.0
+    ]
+  },
+  "confusion": {
+    "tn": 16,
+    "fp": 18,
+    "fn": 17,
+    "tp": 66
+  },
+  "features": [
+    {
+      "name": "Age",
+      "type": "number",
+      "min": 9.64,
+      "max": 75.0,
+      "median": 45.0,
+      "integer": true
+    },
+    {
+      "name": "Gender",
+      "type": "category",
+      "options": [
+        "Female",
+        "Male"
+      ],
+      "median": "Male"
+    },
+    {
+      "name": "TB",
+      "type": "number",
+      "min": 0.582,
+      "max": 28.20399999999986,
+      "median": 1.0,
+      "integer": false
+    },
+    {
+      "name": "DB",
+      "type": "number",
+      "min": 0.1,
+      "max": 12.961999999999955,
+      "median": 0.3,
+      "integer": false
+    },
+    {
+      "name": "Alkphos",
+      "type": "number",
+      "min": 97.82,
+      "max": 1555.3999999999985,
+      "median": 208.0,
+      "integer": true
+    },
+    {
+      "name": "Sgpt",
+      "type": "number",
+      "min": 11.82,
+      "max": 1003.999999999985,
+      "median": 35.0,
+      "integer": true
+    },
+    {
+      "name": "Sgot",
+      "type": "number",
+      "min": 12.0,
+      "max": 976.1999999999955,
+      "median": 42.0,
+      "integer": true
+    },
+    {
+      "name": "TP",
+      "type": "number",
+      "min": 3.6820000000000004,
+      "max": 8.617999999999995,
+      "median": 6.6,
+      "integer": false
+    },
+    {
+      "name": "ALB",
+      "type": "number",
+      "min": 1.482,
+      "max": 4.9,
+      "median": 3.1,
+      "integer": false
+    },
+    {
+      "name": "A/G Ratio",
+      "type": "number",
+      "min": 0.3856,
+      "max": 1.8110000000000015,
+      "median": 0.93,
+      "integer": false
+    }
+  ],
+  "numeric_cols": [
+    "Age",
+    "TB",
+    "DB",
+    "Alkphos",
+    "Sgpt",
+    "Sgot",
+    "TP",
+    "ALB",
+    "A/G Ratio"
+  ],
+  "categorical_cols": [
+    "Gender"
+  ]
+}

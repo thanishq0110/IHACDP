@@ -1,0 +1,20 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Downloaded datasets - fetched by scripts/fetch_data.py and fetch_symcat.py
+data/raw/*.csv
+
+# Trained models and derived artefacts - rebuilt by scripts/train*.py
+artifacts/*.joblib
+artifacts/*_background.csv
+
+# Local runtime state
+.model
+*.log
+
+# macOS
+.DS_Store
+**/.DS_Store

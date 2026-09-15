@@ -1,0 +1,222 @@
+{
+  "key": "heart",
+  "label": "Coronary Heart Disease",
+  "desc": "Cardiac risk from resting vitals and stress-test findings",
+  "source": "UCI #45 - Cleveland Heart Disease",
+  "rows": 303,
+  "n_features": 13,
+  "prevalence": 0.4587,
+  "chosen_algorithm": "LogisticRegression",
+  "metrics": {
+    "algorithm": "LogisticRegression",
+    "cv_auc_mean": 0.8963,
+    "cv_auc_std": 0.0141,
+    "test_auc": 0.9502,
+    "accuracy": 0.8689,
+    "precision": 0.8125,
+    "recall": 0.9286,
+    "f1": 0.8667,
+    "brier": 0.0964,
+    "fit_seconds": 0.07
+  },
+  "leaderboard": [
+    {
+      "algorithm": "LogisticRegression",
+      "cv_auc_mean": 0.8963,
+      "cv_auc_std": 0.0141,
+      "test_auc": 0.9502,
+      "accuracy": 0.8689,
+      "precision": 0.8125,
+      "recall": 0.9286,
+      "f1": 0.8667,
+      "brier": 0.0964,
+      "fit_seconds": 0.07
+    },
+    {
+      "algorithm": "RandomForest",
+      "cv_auc_mean": 0.8869,
+      "cv_auc_std": 0.0311,
+      "test_auc": 0.9621,
+      "accuracy": 0.8852,
+      "precision": 0.8387,
+      "recall": 0.9286,
+      "f1": 0.8814,
+      "brier": 0.0955,
+      "fit_seconds": 0.58
+    },
+    {
+      "algorithm": "XGBoost",
+      "cv_auc_mean": 0.8582,
+      "cv_auc_std": 0.0227,
+      "test_auc": 0.9307,
+      "accuracy": 0.8525,
+      "precision": 0.7879,
+      "recall": 0.9286,
+      "f1": 0.8525,
+      "brier": 0.1107,
+      "fit_seconds": 0.19
+    }
+  ],
+  "roc": {
+    "fpr": [
+      0.0,
+      0.0,
+      0.0,
+      0.0303,
+      0.0303,
+      0.0606,
+      0.0606,
+      0.1515,
+      0.1515,
+      0.2121,
+      0.2121,
+      0.3333,
+      0.3333,
+      1.0
+    ],
+    "tpr": [
+      0.0,
+      0.0357,
+      0.1786,
+      0.1786,
+      0.7857,
+      0.7857,
+      0.8929,
+      0.8929,
+      0.9286,
+      0.9286,
+      0.9643,
+      0.9643,
+      1.0,
+      1.0
+    ]
+  },
+  "confusion": {
+    "tn": 27,
+    "fp": 6,
+    "fn": 2,
+    "tp": 26
+  },
+  "features": [
+    {
+      "name": "age",
+      "type": "number",
+      "min": 35.0,
+      "max": 71.0,
+      "median": 56.0,
+      "integer": true
+    },
+    {
+      "name": "sex",
+      "type": "number",
+      "min": 0.0,
+      "max": 1.0,
+      "median": 1.0,
+      "integer": true
+    },
+    {
+      "name": "cp",
+      "type": "number",
+      "min": 1.0,
+      "max": 4.0,
+      "median": 3.0,
+      "integer": true
+    },
+    {
+      "name": "trestbps",
+      "type": "number",
+      "min": 100.0,
+      "max": 180.0,
+      "median": 130.0,
+      "integer": true
+    },
+    {
+      "name": "chol",
+      "type": "number",
+      "min": 149.0,
+      "max": 406.74000000000024,
+      "median": 241.0,
+      "integer": true
+    },
+    {
+      "name": "fbs",
+      "type": "number",
+      "min": 0.0,
+      "max": 1.0,
+      "median": 0.0,
+      "integer": true
+    },
+    {
+      "name": "restecg",
+      "type": "number",
+      "min": 0.0,
+      "max": 2.0,
+      "median": 1.0,
+      "integer": true
+    },
+    {
+      "name": "thalach",
+      "type": "number",
+      "min": 95.02,
+      "max": 191.96000000000004,
+      "median": 153.0,
+      "integer": true
+    },
+    {
+      "name": "exang",
+      "type": "number",
+      "min": 0.0,
+      "max": 1.0,
+      "median": 0.0,
+      "integer": true
+    },
+    {
+      "name": "oldpeak",
+      "type": "number",
+      "min": 0.0,
+      "max": 4.2,
+      "median": 0.8,
+      "integer": false
+    },
+    {
+      "name": "slope",
+      "type": "number",
+      "min": 1.0,
+      "max": 3.0,
+      "median": 2.0,
+      "integer": true
+    },
+    {
+      "name": "ca",
+      "type": "number",
+      "min": 0.0,
+      "max": 3.0,
+      "median": 0.0,
+      "integer": true
+    },
+    {
+      "name": "thal",
+      "type": "number",
+      "min": 3.0,
+      "max": 7.0,
+      "median": 3.0,
+      "integer": true
+    }
+  ],
+  "numeric_cols": [
+    "age",
+    "sex",
+    "cp",
+    "trestbps",
+    "chol",
+    "fbs",
+    "restecg",
+    "thalach",
+    "exang",
+    "oldpeak",
+    "slope",
+    "ca",
+    "thal"
+  ],
+  "categorical_cols": []
+}

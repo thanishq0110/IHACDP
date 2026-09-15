@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>IHACDP · About</title>
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="64x64" href="/assets/favicon-64.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+<nav class="nav"><div class="nav-in">
+  <a class="brand" href="/"><img class="glyph" src="/assets/logo.png" alt="">IHACDP</a>
+  <div class="nav-links"><a href="/models"><span class="nav-full">Model Performance</span><span class="nav-short">Models</span></a><a href="/about" class="on" aria-current="page">About</a><a href="/consult" class="nav-cta">Try IHACDP</a></div>
+</div></nav>
+
+<section class="section" style="padding-top:64px">
+  <div class="wrap" style="max-width:820px">
+    <div class="eyebrow">About the platform</div>
+    <h2>A clinical decision support system that shows its working</h2>
+    <p class="lede" style="max-width:none">IHACDP pairs validated statistical risk models with a locally-run
+      language model. The models do the predicting; the language model does the explaining. Keeping those two
+      jobs separate is what makes the output auditable, and is the core design principle of the platform.</p>
+
+    <div class="grid g2" style="margin-top:44px">
+      <div class="card"><div class="ico">◐</div><h3>Why not let the LLM diagnose?</h3>
+        <p>A language model left to diagnose from lab values produces fluent, confident text with no
+          measurable error rate. A gradient-boosted classifier trained on 75,000 labelled records produces a
+          probability with a published AUC. We use the second for the decision and the first for the narration.</p></div>
+      <div class="card"><div class="ico">◑</div><h3>Observed vs. imputed</h3>
+        <p>Missing inputs are filled with training-set medians so the models can still run. Every feature is
+          tagged with its provenance, and the language model receives only the observed ones — so it cannot
+          describe a finding that was really a placeholder.</p></div>
+      <div class="card"><div class="ico">◒</div><h3>Deterministic extraction</h3>
+        <p>Lab values and vitals are lifted from ordinary sentences by pattern matching with range validation,
+          not by the language model. Numbers are never paraphrased by a neural network before reaching a classifier.</p></div>
+      <div class="card"><div class="ico">◓</div><h3>Runs with the network off</h3>
+        <p>Inference happens over a loopback connection to a 4-billion-parameter model on this machine. There
+          are no API keys, no third-party endpoints, and no fallback path that would send clinical text off-device.</p></div>
+    </div>
+
+    <div class="eyebrow" style="margin-top:64px">Architecture</div>
+    <h2>Request path</h2>
+    <div class="card scroll-x" style="margin-top:22px;padding:26px" tabindex="0" role="group" aria-label="Request path diagram, scrollable">
+      <pre class="mono" style="margin:0;font-size:12.6px;line-height:1.95;color:var(--ink-2);overflow-x:auto">Patient utterance
+      │
+      ├─▶ Regex entity extractor ──▶ canonical clinical record (58 fields)
+      │                                    │
+      │                                    ├─▶ diabetes  mapper ─▶ XGBoost          ─┐
+      │                                    ├─▶ heart     mapper ─▶ LogisticRegression│
+      │                                    ├─▶ kidney    mapper ─▶ LogisticRegression├─▶ probability
+      │                                    ├─▶ liver     mapper ─▶ RandomForest      │   + SHAP
+      │                                    └─▶ breast    mapper ─▶ LogisticRegression┘   + provenance
+      │                                                                                   │
+      └─▶ Qwen3-4B (local) ◀── observed features + SHAP drivers + AUC ◀──────────────────┘
+                │
+                └─▶ streamed clinical note  ·  drug classes only  ·  no doses</pre>
+    </div>
+
+    <div class="eyebrow" style="margin-top:64px">Data provenance</div>
+    <h2>Public research datasets</h2>
+    <p class="lede" style="max-width:none">All five models are trained on openly published, de-identified
+      research datasets. No patient data from this application is ever stored or used for training.</p>
+    <div class="grid" style="grid-template-columns:1fr;gap:10px;margin-top:26px" id="src-list"></div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <span class="foot-mark">IHACDP</span>
+    <a href="/consult">Start a consultation &rarr;</a>
+  </div>
+</footer>
+
+<script>
+fetch('/api/diseases').then(r=>r.json()).then(ds=>{
+  document.getElementById('src-list').innerHTML = ds.map(d=>`
+    <div class="card" style="padding:17px 20px;display:flex;gap:16px;align-items:center">
+      <div><h3 style="margin:0 0 3px">${d.label}</h3>
+           <p style="font-size:13.5px">${d.source}</p></div>
+      <div style="margin-left:auto;text-align:right;flex:0 0 auto">
+        <div class="mono" style="font-weight:700;color:var(--brand-2)">${d.rows.toLocaleString()}</div>
+        <div style="font-size:11.5px;color:var(--ink-4)">records · ${d.n_features} features</div></div>
+    </div>`).join('');
+}).catch(()=>{});
+</script>
+<script src="/js/nav.js"></script>
+</body></html>

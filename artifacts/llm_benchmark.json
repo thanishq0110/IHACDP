@@ -1,0 +1,44 @@
+[
+  {
+    "model": "gemma3:4b",
+    "score": 100.0,
+    "leak_rate": 0.0,
+    "concise_rate": 1.0,
+    "single_question_rate": 1.0,
+    "red_flag_escalation": true,
+    "report_sections": "6/6",
+    "dose_violations": 0,
+    "faithfulness": 1.0,
+    "median_turn_latency_s": 4.17,
+    "report_latency_s": 22.0,
+    "tokens_per_sec": 11.4
+  },
+  {
+    "model": "llama3.2:3b",
+    "score": 90.0,
+    "leak_rate": 0.0,
+    "concise_rate": 1.0,
+    "single_question_rate": 1.0,
+    "red_flag_escalation": true,
+    "report_sections": "6/6",
+    "dose_violations": 3,
+    "faithfulness": 1.0,
+    "median_turn_latency_s": 2.07,
+    "report_latency_s": 21.9,
+    "tokens_per_sec": 17.1
+  },
+  {
+    "model": "qwen3:4b",
+    "score": 42.5,
+    "leak_rate": 0.75,
+    "concise_rate": 0.0,
+    "single_question_rate": 0.0,
+    "red_flag_escalation": true,
+    "report_sections": "6/6",
+    "dose_violations": 6,
+    "faithfulness": 1.0,
+    "median_turn_latency_s": 10.86,
+    "report_latency_s": 52.7,
+    "tokens_per_sec": 24.0
+  }
+]

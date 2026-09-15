@@ -1,0 +1,367 @@
+{
+  "key": "breast",
+  "label": "Breast Cancer (Malignancy)",
+  "desc": "Malignancy from FNA cytology nuclear morphometry",
+  "source": "UCI #17 - Wisconsin Diagnostic Breast Cancer",
+  "rows": 569,
+  "n_features": 30,
+  "prevalence": 0.3726,
+  "chosen_algorithm": "LogisticRegression",
+  "metrics": {
+    "algorithm": "LogisticRegression",
+    "cv_auc_mean": 0.9954,
+    "cv_auc_std": 0.0048,
+    "test_auc": 0.9954,
+    "accuracy": 0.9737,
+    "precision": 0.9756,
+    "recall": 0.9524,
+    "f1": 0.9639,
+    "brier": 0.0222,
+    "fit_seconds": 0.05
+  },
+  "leaderboard": [
+    {
+      "algorithm": "LogisticRegression",
+      "cv_auc_mean": 0.9954,
+      "cv_auc_std": 0.0048,
+      "test_auc": 0.9954,
+      "accuracy": 0.9737,
+      "precision": 0.9756,
+      "recall": 0.9524,
+      "f1": 0.9639,
+      "brier": 0.0222,
+      "fit_seconds": 0.05
+    },
+    {
+      "algorithm": "XGBoost",
+      "cv_auc_mean": 0.9937,
+      "cv_auc_std": 0.0041,
+      "test_auc": 0.9917,
+      "accuracy": 0.9825,
+      "precision": 1.0,
+      "recall": 0.9524,
+      "f1": 0.9756,
+      "brier": 0.0151,
+      "fit_seconds": 0.29
+    },
+    {
+      "algorithm": "RandomForest",
+      "cv_auc_mean": 0.99,
+      "cv_auc_std": 0.0057,
+      "test_auc": 0.997,
+      "accuracy": 0.9737,
+      "precision": 1.0,
+      "recall": 0.9286,
+      "f1": 0.963,
+      "brier": 0.0278,
+      "fit_seconds": 0.55
+    }
+  ],
+  "roc": {
+    "fpr": [
+      0.0,
+      0.0,
+      0.0,
+      0.0139,
+      0.0139,
+      0.0556,
+      0.0556,
+      0.125,
+      0.125,
+      1.0
+    ],
+    "tpr": [
+      0.0,
+      0.0238,
+      0.9286,
+      0.9286,
+      0.9524,
+      0.9524,
+      0.9762,
+      0.9762,
+      1.0,
+      1.0
+    ]
+  },
+  "confusion": {
+    "tn": 71,
+    "fp": 1,
+    "fn": 2,
+    "tp": 40
+  },
+  "features": [
+    {
+      "name": "radius1",
+      "type": "number",
+      "min": 8.458359999999999,
+      "max": 24.37160000000002,
+      "median": 13.37,
+      "integer": false
+    },
+    {
+      "name": "texture1",
+      "type": "number",
+      "min": 10.9304,
+      "max": 30.652000000000005,
+      "median": 18.84,
+      "integer": false
+    },
+    {
+      "name": "perimeter1",
+      "type": "number",
+      "min": 53.827600000000004,
+      "max": 165.72400000000002,
+      "median": 86.24,
+      "integer": false
+    },
+    {
+      "name": "area1",
+      "type": "number",
+      "min": 215.664,
+      "max": 1786.600000000004,
+      "median": 551.1,
+      "integer": false
+    },
+    {
+      "name": "smoothness1",
+      "type": "number",
+      "min": 0.06865399999999999,
+      "max": 0.13288800000000003,
+      "median": 0.09587,
+      "integer": false
+    },
+    {
+      "name": "compactness1",
+      "type": "number",
+      "min": 0.0333508,
+      "max": 0.27719200000000005,
+      "median": 0.09263,
+      "integer": false
+    },
+    {
+      "name": "concavity1",
+      "type": "number",
+      "min": 0.0,
+      "max": 0.35168800000000006,
+      "median": 0.06154,
+      "integer": false
+    },
+    {
+      "name": "concave_points1",
+      "type": "number",
+      "min": 0.0,
+      "max": 0.16420800000000035,
+      "median": 0.0335,
+      "integer": false
+    },
+    {
+      "name": "symmetry1",
+      "type": "number",
+      "min": 0.129508,
+      "max": 0.259564,
+      "median": 0.1792,
+      "integer": false
+    },
+    {
+      "name": "fractal_dimension1",
+      "type": "number",
+      "min": 0.051504,
+      "max": 0.08543760000000016,
+      "median": 0.06154,
+      "integer": false
+    },
+    {
+      "name": "radius2",
+      "type": "number",
+      "min": 0.11974000000000001,
+      "max": 1.29132,
+      "median": 0.3242,
+      "integer": false
+    },
+    {
+      "name": "texture2",
+      "type": "number",
+      "min": 0.41054799999999997,
+      "max": 2.915440000000001,
+      "median": 1.108,
+      "integer": false
+    },
+    {
+      "name": "perimeter2",
+      "type": "number",
+      "min": 0.953248,
+      "max": 9.690040000000009,
+      "median": 2.287,
+      "integer": false
+    },
+    {
+      "name": "area2",
+      "type": "number",
+      "min": 8.51444,
+      "max": 177.68400000000017,
+      "median": 24.53,
+      "integer": false
+    },
+    {
+      "name": "smoothness2",
+      "type": "number",
+      "min": 0.0030583599999999996,
+      "max": 0.017258000000000006,
+      "median": 0.00638,
+      "integer": false
+    },
+    {
+      "name": "compactness2",
+      "type": "number",
+      "min": 0.00470524,
+      "max": 0.08987200000000028,
+      "median": 0.02045,
+      "integer": false
+    },
+    {
+      "name": "concavity2",
+      "type": "number",
+      "min": 0.0,
+      "max": 0.1222920000000004,
+      "median": 0.02589,
+      "integer": false
+    },
+    {
+      "name": "concave_points2",
+      "type": "number",
+      "min": 0.0,
+      "max": 0.031193600000000148,
+      "median": 0.01093,
+      "integer": false
+    },
+    {
+      "name": "symmetry2",
+      "type": "number",
+      "min": 0.0105468,
+      "max": 0.05220800000000008,
+      "median": 0.01873,
+      "integer": false
+    },
+    {
+      "name": "fractal_dimension2",
+      "type": "number",
+      "min": 0.00111352,
+      "max": 0.012649600000000014,
+      "median": 0.003187,
+      "integer": false
+    },
+    {
+      "name": "radius3",
+      "type": "number",
+      "min": 9.207600000000001,
+      "max": 30.762800000000002,
+      "median": 14.97,
+      "integer": false
+    },
+    {
+      "name": "texture3",
+      "type": "number",
+      "min": 15.200800000000001,
+      "max": 41.802400000000006,
+      "median": 25.41,
+      "integer": false
+    },
+    {
+      "name": "perimeter3",
+      "type": "number",
+      "min": 58.2704,
+      "max": 208.30400000000023,
+      "median": 97.66,
+      "integer": false
+    },
+    {
+      "name": "area3",
+      "type": "number",
+      "min": 256.192,
+      "max": 2918.1600000000017,
+      "median": 686.5,
+      "integer": false
+    },
+    {
+      "name": "smoothness3",
+      "type": "number",
+      "min": 0.08791,
+      "max": 0.1889080000000001,
+      "median": 0.1313,
+      "integer": false
+    },
+    {
+      "name": "compactness3",
+      "type": "number",
+      "min": 0.0500944,
+      "max": 0.7786440000000009,
+      "median": 0.2119,
+      "integer": false
+    },
+    {
+      "name": "concavity3",
+      "type": "number",
+      "min": 0.0,
+      "max": 0.9023800000000001,
+      "median": 0.2267,
+      "integer": false
+    },
+    {
+      "name": "concave_points3",
+      "type": "number",
+      "min": 0.0,
+      "max": 0.26921600000000007,
+      "median": 0.09993,
+      "integer": false
+    },
+    {
+      "name": "symmetry3",
+      "type": "number",
+      "min": 0.176028,
+      "max": 0.4869080000000001,
+      "median": 0.2822,
+      "integer": false
+    },
+    {
+      "name": "fractal_dimension3",
+      "type": "number",
+      "min": 0.0585796,
+      "max": 0.14062800000000003,
+      "median": 0.08004,
+      "integer": false
+    }
+  ],
+  "numeric_cols": [
+    "radius1",
+    "texture1",
+    "perimeter1",
+    "area1",
+    "smoothness1",
+    "compactness1",
+    "concavity1",
+    "concave_points1",
+    "symmetry1",
+    "fractal_dimension1",
+    "radius2",
+    "texture2",
+    "perimeter2",
+    "area2",
+    "smoothness2",
+    "compactness2",
+    "concavity2",
+    "concave_points2",
+    "symmetry2",
+    "fractal_dimension2",
+    "radius3",
+    "texture3",
+    "perimeter3",
+    "area3",
+    "smoothness3",
+    "compactness3",
+    "concavity3",
+    "concave_points3",
+    "symmetry3",
+    "fractal_dimension3"
+  ],
+  "categorical_cols": []
+}

@@ -1,0 +1,102 @@
+[
+  {
+    "key": "diabetes",
+    "label": "Type 2 Diabetes",
+    "rows": 75346,
+    "n_features": 21,
+    "chosen_algorithm": "XGBoost",
+    "metrics": {
+      "algorithm": "XGBoost",
+      "cv_auc_mean": 0.8243,
+      "cv_auc_std": 0.0028,
+      "test_auc": 0.8268,
+      "accuracy": 0.749,
+      "precision": 0.7053,
+      "recall": 0.7987,
+      "f1": 0.7491,
+      "brier": 0.1693,
+      "fit_seconds": 1.77
+    },
+    "source": "UCI #891 - CDC Diabetes Health Indicators (BRFSS)"
+  },
+  {
+    "key": "heart",
+    "label": "Coronary Heart Disease",
+    "rows": 303,
+    "n_features": 13,
+    "chosen_algorithm": "LogisticRegression",
+    "metrics": {
+      "algorithm": "LogisticRegression",
+      "cv_auc_mean": 0.8963,
+      "cv_auc_std": 0.0141,
+      "test_auc": 0.9502,
+      "accuracy": 0.8689,
+      "precision": 0.8125,
+      "recall": 0.9286,
+      "f1": 0.8667,
+      "brier": 0.0964,
+      "fit_seconds": 0.07
+    },
+    "source": "UCI #45 - Cleveland Heart Disease"
+  },
+  {
+    "key": "kidney",
+    "label": "Chronic Kidney Disease",
+    "rows": 400,
+    "n_features": 24,
+    "chosen_algorithm": "LogisticRegression",
+    "metrics": {
+      "algorithm": "LogisticRegression",
+      "cv_auc_mean": 0.9994,
+      "cv_auc_std": 0.0013,
+      "test_auc": 1.0,
+      "accuracy": 0.975,
+      "precision": 1.0,
+      "recall": 0.96,
+      "f1": 0.9796,
+      "brier": 0.0117,
+      "fit_seconds": 0.05
+    },
+    "source": "UCI #336 - Chronic Kidney Disease"
+  },
+  {
+    "key": "liver",
+    "label": "Chronic Liver Disease",
+    "rows": 583,
+    "n_features": 10,
+    "chosen_algorithm": "RandomForest",
+    "metrics": {
+      "algorithm": "RandomForest",
+      "cv_auc_mean": 0.7369,
+      "cv_auc_std": 0.0237,
+      "test_auc": 0.7821,
+      "accuracy": 0.7009,
+      "precision": 0.7857,
+      "recall": 0.7952,
+      "f1": 0.7904,
+      "brier": 0.1704,
+      "fit_seconds": 0.59
+    },
+    "source": "UCI #225 - Indian Liver Patient Dataset"
+  },
+  {
+    "key": "breast",
+    "label": "Breast Cancer (Malignancy)",
+    "rows": 569,
+    "n_features": 30,
+    "chosen_algorithm": "LogisticRegression",
+    "metrics": {
+      "algorithm": "LogisticRegression",
+      "cv_auc_mean": 0.9954,
+      "cv_auc_std": 0.0048,
+      "test_auc": 0.9954,
+      "accuracy": 0.9737,
+      "precision": 0.9756,
+      "recall": 0.9524,
+      "f1": 0.9639,
+      "brier": 0.0222,
+      "fit_seconds": 0.05
+    },
+    "source": "UCI #17 - Wisconsin Diagnostic Breast Cancer"
+  }
+]

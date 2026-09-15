@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>IHACDP · Consultation</title>
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="64x64" href="/assets/favicon-64.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="stylesheet" href="/css/app.css">
+<link rel="stylesheet" href="/css/consult.css">
+</head>
+<body class="app-shell">
+
+<nav class="nav">
+  <div class="nav-in">
+    <a class="brand" href="/"><img class="glyph" src="/assets/logo.png" alt="">IHACDP</a>
+    <div class="nav-links">
+      <a href="/models"><span class="nav-full">Model Performance</span><span class="nav-short">Models</span></a>
+      <a href="/about">About</a>
+      <a href="/consult" class="on" aria-current="page">Consultation</a>
+    </div>
+  </div>
+</nav>
+
+<div class="app">
+  <div class="chat-col centred" id="chat-col">
+    <div class="flexspace top"></div>
+    <div class="thread" id="thread">
+      <div class="thread-empty" id="thread-empty">
+        <img class="te-glyph" src="/assets/logo.png" alt="" aria-hidden="true">
+        <h1>IHACDP</h1>
+        <p>Tell me how you've been feeling, and I'll explain what might be going
+           on and what to do next.</p>
+      </div>
+      <div class="thread-in" id="thread-in"></div>
+      <div class="report" id="report" hidden>
+        <div class="report-card">
+          <div class="report-head">
+            <img class="av doc" src="/assets/logo.png" alt="">
+            <div><h3>Prescription</h3></div>
+            <button class="btn btn-ghost btn-sm" style="margin-left:auto" onclick="window.print()">Print</button>
+          </div>
+          <div class="risk-grid" id="risks"></div>
+          <div class="report-body" id="report-body"></div>
+          <div class="findings-used" id="facts"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="composer">
+      <div class="composer-in">
+        <div class="inputbar">
+          <textarea id="input" rows="1" aria-label="Describe how you have been feeling" placeholder="How have you been feeling?"></textarea>
+          <button class="send" id="send" aria-label="Send message">
+            <svg viewBox="0 0 256 256" aria-hidden="true" focusable="false">
+              <path d="M205.66,117.66a8,8,0,0,1-11.32,0L136,59.31V216a8,8,0,0,1-16,0V59.31L61.66,117.66a8,8,0,0,1-11.32-11.32l72-72a8,8,0,0,1,11.32,0l72,72A8,8,0,0,1,205.66,117.66Z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="flexspace bottom"></div>
+  </div>
+
+</div>
+
+<script src="/js/nav.js"></script>
+<script src="/js/consult.js"></script>
+</body>
+</html>

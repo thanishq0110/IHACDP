@@ -1,0 +1,313 @@
+{
+  "key": "kidney",
+  "label": "Chronic Kidney Disease",
+  "desc": "Renal impairment from serum chemistry and urinalysis",
+  "source": "UCI #336 - Chronic Kidney Disease",
+  "rows": 400,
+  "n_features": 24,
+  "prevalence": 0.625,
+  "chosen_algorithm": "LogisticRegression",
+  "metrics": {
+    "algorithm": "LogisticRegression",
+    "cv_auc_mean": 0.9994,
+    "cv_auc_std": 0.0013,
+    "test_auc": 1.0,
+    "accuracy": 0.975,
+    "precision": 1.0,
+    "recall": 0.96,
+    "f1": 0.9796,
+    "brier": 0.0117,
+    "fit_seconds": 0.05
+  },
+  "leaderboard": [
+    {
+      "algorithm": "LogisticRegression",
+      "cv_auc_mean": 0.9994,
+      "cv_auc_std": 0.0013,
+      "test_auc": 1.0,
+      "accuracy": 0.975,
+      "precision": 1.0,
+      "recall": 0.96,
+      "f1": 0.9796,
+      "brier": 0.0117,
+      "fit_seconds": 0.05
+    },
+    {
+      "algorithm": "RandomForest",
+      "cv_auc_mean": 0.999,
+      "cv_auc_std": 0.0013,
+      "test_auc": 1.0,
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "brier": 0.0106,
+      "fit_seconds": 0.5
+    },
+    {
+      "algorithm": "XGBoost",
+      "cv_auc_mean": 0.9981,
+      "cv_auc_std": 0.0017,
+      "test_auc": 1.0,
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "brier": 0.003,
+      "fit_seconds": 0.13
+    }
+  ],
+  "roc": {
+    "fpr": [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "tpr": [
+      0.0,
+      0.02,
+      1.0,
+      1.0
+    ]
+  },
+  "confusion": {
+    "tn": 30,
+    "fp": 0,
+    "fn": 2,
+    "tp": 48
+  },
+  "features": [
+    {
+      "name": "age",
+      "type": "number",
+      "min": 5.0,
+      "max": 80.10000000000002,
+      "median": 55.0,
+      "integer": true
+    },
+    {
+      "name": "bp",
+      "type": "number",
+      "min": 50.0,
+      "max": 110.0,
+      "median": 80.0,
+      "integer": true
+    },
+    {
+      "name": "sg",
+      "type": "number",
+      "min": 1.005,
+      "max": 1.025,
+      "median": 1.02,
+      "integer": false
+    },
+    {
+      "name": "al",
+      "type": "number",
+      "min": 0.0,
+      "max": 4.0,
+      "median": 0.0,
+      "integer": true
+    },
+    {
+      "name": "su",
+      "type": "number",
+      "min": 0.0,
+      "max": 4.0,
+      "median": 0.0,
+      "integer": true
+    },
+    {
+      "name": "rbc",
+      "type": "category",
+      "options": [
+        "abnormal",
+        "normal"
+      ],
+      "median": "normal"
+    },
+    {
+      "name": "pc",
+      "type": "category",
+      "options": [
+        "abnormal",
+        "normal"
+      ],
+      "median": "normal"
+    },
+    {
+      "name": "pcc",
+      "type": "category",
+      "options": [
+        "notpresent",
+        "present"
+      ],
+      "median": "notpresent"
+    },
+    {
+      "name": "ba",
+      "type": "category",
+      "options": [
+        "notpresent",
+        "present"
+      ],
+      "median": "notpresent"
+    },
+    {
+      "name": "bgr",
+      "type": "number",
+      "min": 70.0,
+      "max": 434.89999999999975,
+      "median": 121.0,
+      "integer": true
+    },
+    {
+      "name": "bu",
+      "type": "number",
+      "min": 15.0,
+      "max": 236.19999999999993,
+      "median": 42.0,
+      "integer": false
+    },
+    {
+      "name": "sc",
+      "type": "number",
+      "min": 0.5,
+      "max": 19.16200000000004,
+      "median": 1.3,
+      "integer": false
+    },
+    {
+      "name": "sod",
+      "type": "number",
+      "min": 113.0,
+      "max": 150.0,
+      "median": 138.0,
+      "integer": false
+    },
+    {
+      "name": "pot",
+      "type": "number",
+      "min": 2.811,
+      "max": 6.588999999999999,
+      "median": 4.4,
+      "integer": false
+    },
+    {
+      "name": "hemo",
+      "type": "number",
+      "min": 5.694,
+      "max": 17.653,
+      "median": 12.649999999999999,
+      "integer": false
+    },
+    {
+      "name": "pcv",
+      "type": "number",
+      "min": 16.28,
+      "max": 53.71999999999997,
+      "median": 40.0,
+      "integer": true
+    },
+    {
+      "name": "wbcc",
+      "type": "number",
+      "min": 3800.0,
+      "max": 18914.0,
+      "median": 8000.0,
+      "integer": true
+    },
+    {
+      "name": "rbcc",
+      "type": "number",
+      "min": 2.368,
+      "max": 6.5,
+      "median": 4.8,
+      "integer": false
+    },
+    {
+      "name": "htn",
+      "type": "category",
+      "options": [
+        "no",
+        "yes"
+      ],
+      "median": "no"
+    },
+    {
+      "name": "dm",
+      "type": "category",
+      "options": [
+        "\tno",
+        "no",
+        "yes"
+      ],
+      "median": "no"
+    },
+    {
+      "name": "cad",
+      "type": "category",
+      "options": [
+        "no",
+        "yes"
+      ],
+      "median": "no"
+    },
+    {
+      "name": "appet",
+      "type": "category",
+      "options": [
+        "good",
+        "poor"
+      ],
+      "median": "good"
+    },
+    {
+      "name": "pe",
+      "type": "category",
+      "options": [
+        "no",
+        "yes"
+      ],
+      "median": "no"
+    },
+    {
+      "name": "ane",
+      "type": "category",
+      "options": [
+        "no",
+        "yes"
+      ],
+      "median": "no"
+    }
+  ],
+  "numeric_cols": [
+    "age",
+    "bp",
+    "sg",
+    "al",
+    "su",
+    "bgr",
+    "bu",
+    "sc",
+    "sod",
+    "pot",
+    "hemo",
+    "pcv",
+    "wbcc",
+    "rbcc"
+  ],
+  "categorical_cols": [
+    "rbc",
+    "pc",
+    "pcc",
+    "ba",
+    "htn",
+    "dm",
+    "cad",
+    "appet",
+    "pe",
+    "ane"
+  ]
+}

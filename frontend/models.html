@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>IHACDP · Models</title>
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="64x64" href="/assets/favicon-64.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="stylesheet" href="/css/app.css">
+<style>
+.tbl{width:100%;border-collapse:collapse;font-size:13.8px;margin-top:14px}
+.tbl th{text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.09em;color:var(--ink-4);
+  padding:9px 12px;border-bottom:1px solid var(--line);font-weight:700}
+.tbl td{padding:10px 12px;border-bottom:1px solid var(--line-2);font-variant-numeric:tabular-nums}
+.tbl tr.win td{background:var(--brand-soft);font-weight:640}
+.tbl tr.win td:first-child:before{content:"★ ";color:var(--brand)}
+.tbl{min-width:560px}
+.mcard{background:#fff;border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--sh-1);
+  padding:24px;margin-bottom:18px}
+.mhead{display:flex;align-items:flex-start;gap:16px;flex-wrap:wrap;margin-bottom:6px}
+.kpi{display:flex;gap:26px;margin-left:auto;flex-wrap:wrap}
+.kpi div{text-align:right}
+.kpi .n{font-family:var(--mono);font-size:21px;font-weight:700;color:var(--brand-2);letter-spacing:-.03em}
+.kpi .l{font-size:10.5px;color:var(--ink-4);text-transform:uppercase;letter-spacing:.07em}
+.roc{border:1px solid var(--line-2);border-radius:10px;background:var(--bg-2);max-width:100%;height:auto}
+@media(max-width:860px){
+  .mcard{padding:16px}
+  .kpi{margin-left:0;gap:16px;width:100%}
+  .kpi div{text-align:left}
+  .mhead>div:first-child{min-width:0}
+}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="nav-in">
+  <a class="brand" href="/"><img class="glyph" src="/assets/logo.png" alt="">IHACDP</a>
+  <div class="nav-links"><a href="/models" class="on" aria-current="page"><span class="nav-full">Model Performance</span><span class="nav-short">Models</span></a><a href="/about">About</a><a href="/consult" class="nav-cta">Try IHACDP</a></div>
+</div></nav>
+
+<section class="section" style="padding-top:56px">
+  <div class="wrap">
+    <div class="eyebrow">Validation</div>
+    <h2>Model performance</h2>
+    <p class="lede">Each disease was contested by three algorithms. Selection was by mean ROC-AUC over 5-fold
+      stratified cross-validation on the training split; all figures below are from the held-out 20% test split.</p>
+    <div id="cards" style="margin-top:36px"></div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <span class="foot-mark">IHACDP</span>
+    <a href="/consult">Start a consultation &rarr;</a>
+  </div>
+</footer>
+
+<script>
+function roc(d){
+  const W=190,H=190,P=22,f=d.roc.fpr,t=d.roc.tpr;
+  const pts=f.map((x,i)=>`${P+x*(W-2*P)},${H-P-t[i]*(H-2*P)}`).join(' ');
+  return `<svg class="roc" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">
+    <line x1="${P}" y1="${H-P}" x2="${W-P}" y2="${P}" stroke="#cfdde3" stroke-width="1" stroke-dasharray="3 3"/>
+    <polyline points="${pts}" fill="none" stroke="#0d6e6e" stroke-width="2.2" stroke-linejoin="round"/>
+    <line x1="${P}" y1="${H-P}" x2="${W-P}" y2="${H-P}" stroke="#8ba1ac" stroke-width="1"/>
+    <line x1="${P}" y1="${P}" x2="${P}" y2="${H-P}" stroke="#8ba1ac" stroke-width="1"/>
+    <text x="${W/2}" y="${H-5}" font-size="9" fill="#8ba1ac" text-anchor="middle">False positive rate</text>
+    <text x="9" y="${H/2}" font-size="9" fill="#8ba1ac" text-anchor="middle" transform="rotate(-90 9 ${H/2})">True positive rate</text>
+  </svg>`;
+}
+fetch('/api/diseases').then(r=>r.json()).then(ds=>{
+  document.getElementById('cards').innerHTML = ds.map(d=>{
+    const c=d.confusion;
+    return `<div class="mcard">
+      <div class="mhead">
+        <div style="min-width:240px"><h3 style="font-size:18px">${d.label}</h3>
+          <p style="color:var(--ink-3);font-size:14px;margin-top:4px">${d.desc}</p>
+          <p style="color:var(--ink-4);font-size:12.5px;margin-top:6px">${d.source} · ${d.rows.toLocaleString()} records ·
+             ${d.n_features} features · prevalence ${(d.prevalence*100).toFixed(1)}%</p></div>
+        <div class="kpi">
+          <div><div class="n">${d.metrics.test_auc.toFixed(4)}</div><div class="l">Test AUC</div></div>
+          <div><div class="n">${(d.metrics.accuracy*100).toFixed(1)}%</div><div class="l">Accuracy</div></div>
+          <div><div class="n">${d.metrics.f1.toFixed(3)}</div><div class="l">F1</div></div>
+          <div><div class="n">${d.metrics.brier.toFixed(3)}</div><div class="l">Brier</div></div>
+        </div>
+      </div>
+      <div style="display:flex;gap:26px;align-items:flex-start;flex-wrap:wrap;margin-top:14px">
+        <div style="flex:1;min-width:0">
+          <div class="scroll-x"><table class="tbl"><thead><tr><th>Algorithm</th><th>CV AUC</th><th>Test AUC</th><th>Acc</th>
+            <th>Prec</th><th>Recall</th><th>F1</th><th>Fit</th></tr></thead><tbody>
+            ${d.leaderboard.map(l=>`<tr class="${l.algorithm===d.chosen_algorithm?'win':''}">
+              <td>${l.algorithm}</td><td>${l.cv_auc_mean.toFixed(4)} ±${l.cv_auc_std.toFixed(3)}</td>
+              <td>${l.test_auc.toFixed(4)}</td><td>${(l.accuracy*100).toFixed(1)}%</td>
+              <td>${l.precision.toFixed(3)}</td><td>${l.recall.toFixed(3)}</td><td>${l.f1.toFixed(3)}</td>
+              <td>${l.fit_seconds}s</td></tr>`).join('')}
+          </tbody></table></div>
+          <p style="font-size:12.5px;color:var(--ink-4);margin-top:12px">
+            Confusion matrix (test): TN ${c.tn} · FP ${c.fp} · FN ${c.fn} · TP ${c.tp}</p>
+        </div>
+        <div>${roc(d)}</div>
+      </div></div>`;
+  }).join('');
+}).catch(()=>{});
+</script>
+<script src="/js/nav.js"></script>
+</body></html>
